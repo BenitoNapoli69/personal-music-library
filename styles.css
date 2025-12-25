@@ -1004,4 +1004,68 @@ input {
   .view-title {
     font-size: 1.5rem;
   }
+
+  /* Fix rating widget overflow on mobile */
+  .rating-widget {
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .rating-widget.rating-small {
+    font-size: 1.1rem;
+  }
+
+  .rating-widget.rating-medium {
+    font-size: 1.4rem;
+  }
+
+  .rating-widget.rating-large {
+    font-size: 1.8rem;
+  }
+
+  .rating-display {
+    margin-left: 8px;
+    min-width: 25px;
+    font-size: 0.9rem;
+  }
+
+  /* Modal improvements for mobile */
+  .modal-content {
+    margin: 10px;
+    padding: var(--spacing-md);
+    max-width: calc(100vw - 20px);
+  }
+
+  .album-detail-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .album-detail-cover {
+    width: 180px;
+    height: 180px;
+  }
+
+  .album-rating {
+    padding: var(--spacing-sm);
+  }
+
+  .rating-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .tracklist-item {
+    padding: var(--spacing-sm);
+  }
+
+  /* Better touch targets */
+  .star {
+    padding: 4px;
+  }
+
+  button {
+    min-height: 44px;
+  }
 }
