@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Library Manager</title>
+  <meta name="description" content="Gestisci la tua libreria musicale personale con valutazioni personalizzate">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles-addon.css">
+</head>
+
+<body>
+  <!-- App Container -->
+  <div class="app-container">
+
+    <!-- Header -->
+    <header class="app-header">
+      <h1>🎵 Music Library</h1>
+      <div class="header-actions">
+        <span id="current-user-display"></span>
+        <button id="switch-user-btn">Cambia Utente</button>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="app-main">
+
+      <!-- User Selection Screen -->
+      <div id="user-selection-screen">
+        <h1 class="user-selection-title">Seleziona il tuo profilo</h1>
+        <div class="user-list"></div>
+      </div>
+
+      <!-- Library View -->
+      <div id="library-view" class="view">
+        <div class="view-header">
+          <h2 class="view-title">La mia Libreria</h2>
+          <div class="header-controls">
+            <select id="library-sort-select" class="sort-select">
+              <option value="addedAt">Data inserimento</option>
+              <option value="year">Anno pubblicazione</option>
+              <option value="rating">Valutazione</option>
+              <option value="artist">Nome artista</option>
+              <option value="title">Nome album</option>
+            </select>
+            <button id="add-album-btn">+ Aggiungi Album</button>
+          </div>
+        </div>
+        <div class="view-content">
+          <div class="album-grid"></div>
+        </div>
+      </div>
+
+      <!-- Artists View -->
+      <div id="artists-view" class="view">
+        <div class="view-header">
+          <h2 class="view-title">I miei Artisti</h2>
+          <select id="artists-sort-select" class="sort-select">
+            <option value="addedAt">Data inserimento</option>
+            <option value="rating">Valutazione</option>
+            <option value="name">Nome artista</option>
+          </select>
+        </div>
+        <div class="view-content">
+          <div class="artist-grid"></div>
+        </div>
+      </div>
+
+      <!-- History View -->
+      <div id="history-view" class="view">
+        <div class="view-header">
+          <h2 class="view-title">Il mio Storico</h2>
+        </div>
+        <div class="view-content">
+          <div class="history-content"></div>
+        </div>
+      </div>
+
+      <!-- Album Detail View -->
+      <div id="album-detail-view"></div>
+
+    </main>
+
+    <!-- Footer Navigation -->
+    <footer class="app-footer">
+      <nav class="bottom-nav">
+        <div class="nav-item active" id="nav-library">
+          <span class="nav-icon">📚</span>
+          <span class="nav-label">Libreria</span>
+        </div>
+        <div class="nav-item" id="nav-artists">
+          <span class="nav-icon">🎤</span>
+          <span class="nav-label">Artisti</span>
+        </div>
+        <div class="nav-item" id="nav-history">
+          <span class="nav-icon">📊</span>
+          <span class="nav-label">Storico</span>
+        </div>
+      </nav>
+    </footer>
+
+  </div>
+
+  <!-- Search Modal -->
+  <div id="search-modal" class="modal">
+    <div class="modal-content">
+      <button class="close-modal">×</button>
+      <h2>Cerca Album</h2>
+      <input type="text" id="album-search-input" placeholder="Cerca per titolo, artista..." autocomplete="off">
+      <div id="search-results"></div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/utils.js"></script>
+  <script src="js/database.js"></script>
+  <script src="js/musicbrainz-api.js"></script>
+  <script src="js/lastfm-api.js"></script>
+  <script src="js/components/rating-widget.js"></script>
+  <script src="js/components/user-manager.js"></script>
+  <script src="js/components/library-view.js"></script>
+  <script src="js/components/album-detail.js"></script>
+  <script src="js/components/artists-view.js"></script>
+  <script src="js/components/history-view.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>
